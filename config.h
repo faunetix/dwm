@@ -71,10 +71,17 @@ static Key keys[] = {
 	/* modifier                     key                         function        argument */
 	{ MODKEY,                       XK_d,                       spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_g,                       spawn,          {.v = firefoxcmd } },
+<<<<<<< HEAD
     { MODKEY,                       XK_Return,                  spawn,          {.v = termcmd } },
 	{ 0,                            XF86XK_AudioMute,		    spawn,		    SHCMD("amixer sset Master toggle") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("amixer sset Master 5%+") },
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("amixer sset Master 5%-") },
+=======
+    	{ MODKEY,                       XK_Return,                  spawn,          SHCMD("st -e tmux attach || tmux new") },
+	{ 0,                            XF86XK_AudioMute,	    spawn,          SHCMD("amixer sset Master toggle") },
+	{ 0, 				XF86XK_AudioRaiseVolume,    spawn,	    SHCMD("amixer sset Master 5%+") },
+	{ 0, 				XF86XK_AudioLowerVolume,    spawn,          SHCMD("amixer sset Master 5%-") },
+>>>>>>> 81a0ed7397ba2bf95575ce9b813b888d2d38a67c
 	{ MODKEY,                       XK_b,                       togglebar,      {0} },
 	{ MODKEY,                       XK_j,                       focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                       focusstack,     {.i = -1 } },
