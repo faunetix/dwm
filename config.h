@@ -69,10 +69,10 @@ static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "togg
 
 static Key keys[] = {
 	/* modifier                     key                         function        argument */
-	{ MODKEY,                       XK_p,                       spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_d,                       spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_g,                       spawn,          {.v = firefoxcmd } },
-    	{ MODKEY,                       XK_Return,                  spawn,          {.v = termcmd } },
-	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("amixer sset Master toggle") },
+    { MODKEY,                       XK_Return,                  spawn,          {.v = termcmd } },
+	{ 0,                            XF86XK_AudioMute,		    spawn,		    SHCMD("amixer sset Master toggle") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("amixer sset Master 5%+") },
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("amixer sset Master 5%-") },
 	{ MODKEY,                       XK_b,                       togglebar,      {0} },
