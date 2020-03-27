@@ -62,26 +62,16 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *firefoxcmd[]  = { "firefox", NULL };
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 
 
 static Key keys[] = {
 	/* modifier                     key                         function        argument */
 	{ MODKEY,                       XK_d,                       spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_g,                       spawn,          {.v = firefoxcmd } },
-<<<<<<< HEAD
-    { MODKEY,                       XK_Return,                  spawn,          {.v = termcmd } },
-	{ 0,                            XF86XK_AudioMute,		    spawn,		    SHCMD("amixer sset Master toggle") },
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("amixer sset Master 5%+") },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("amixer sset Master 5%-") },
-=======
-    	{ MODKEY,                       XK_Return,                  spawn,          SHCMD("st -e tmux attach || tmux new") },
-	{ 0,                            XF86XK_AudioMute,	    spawn,          SHCMD("amixer sset Master toggle") },
+	{ 0,                            XF86XK_AudioMute,	    spawn,	    SHCMD("amixer sset Master toggle") },
 	{ 0, 				XF86XK_AudioRaiseVolume,    spawn,	    SHCMD("amixer sset Master 5%+") },
-	{ 0, 				XF86XK_AudioLowerVolume,    spawn,          SHCMD("amixer sset Master 5%-") },
->>>>>>> 81a0ed7397ba2bf95575ce9b813b888d2d38a67c
+	{ 0, 				XF86XK_AudioLowerVolume,    spawn,	    SHCMD("amixer sset Master 5%-") },
+    	{ MODKEY,                       XK_Return,                  spawn,          SHCMD("st -e tmux attach || tmux new") },
 	{ MODKEY,                       XK_b,                       togglebar,      {0} },
 	{ MODKEY,                       XK_j,                       focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                       focusstack,     {.i = -1 } },
