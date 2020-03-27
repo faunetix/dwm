@@ -15,6 +15,7 @@ static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
+
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
@@ -70,10 +71,10 @@ static Key keys[] = {
 	/* modifier                     key                         function        argument */
 	{ MODKEY,                       XK_p,                       spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_g,                       spawn,          {.v = firefoxcmd } },
-    { MODKEY,                       XK_Return,                  spawn,          {.v = termcmd } },
-    { 0,                            XF86XK_AudioLowerVolume,    spawn,          {.v = downvol } },
-	{ 0,                            XF86XK_AudioMute,           spawn,          {.v = mutevol } },
-	{ 0,                            XF86XK_AudioRaiseVolume,    spawn,          {.v = upvol   } },
+    	{ MODKEY,                       XK_Return,                  spawn,          {.v = termcmd } },
+	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("amixer sset Master toggle") },
+	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("amixer sset Master 5%+") },
+	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("amixer sset Master 5%-") },
 	{ MODKEY,                       XK_b,                       togglebar,      {0} },
 	{ MODKEY,                       XK_j,                       focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                       focusstack,     {.i = -1 } },
